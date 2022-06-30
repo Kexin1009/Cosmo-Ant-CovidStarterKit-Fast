@@ -12,5 +12,3 @@ pip install pyTigerGraph fastapi uvicorn
 uvicorn main:app --reload
 ```
 
-# Cosmo-Ant-CovidStarterKit-Fast
-# Cosmo-Ant-CovidStarterKit-Fast
