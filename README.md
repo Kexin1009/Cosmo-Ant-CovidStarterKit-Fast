@@ -1,9 +1,3 @@
-# cosmos_test
-Created with CodeSandbox
-
-## Quickstart
-
-1. Clone repository and enter the directory of the clone repository
 
 ### Set Up the FastAPI Server
 2. Create a virtual environment `python3 -m venv venv` and activate it `source venv/bin/activate/`
@@ -18,19 +12,4 @@ pip install pyTigerGraph fastapi uvicorn
 uvicorn main:app --reload
 ```
 
-### Run Cosmos
-7. Install packages:
-```
-npm install parcel-bundler
-npm install @cosmograph/cosmos
-```
-8. Build and run the code:
-```
-npx parcel build index.html
-npx parcel index.html --open
-```
-
-
-## First Attempt Result:
-
-![Graph](data_viz.png)
+# Cosmo-Ant-CovidStarterKit-Fast
