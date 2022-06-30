@@ -1,7 +1,7 @@
 {
-  "name": "cosmos-usage-example",
+  "name": "cosmos-tg-template",
   "version": "1.0.0",
-  "description": "How to use @cosmograph/cosmos",
+  "description": "Using cosmograph with TigerGraph template and sample project",
   "main": "index.html",
   "scripts": {
     "start": "parcel index.html --open",
@@ -14,14 +14,13 @@
   "devDependencies": {
     "typescript": "4.4.4"
   },
-  "resolutions": {
-    "@babel/preset-env": "7.13.8"
-  },
   "keywords": [
     "network",
     "force graph",
     "webgl",
     "simulation",
-    "data visualization"
+    "data visualization",
+    "tigergraph",
+    "graph database"
   ]
 }

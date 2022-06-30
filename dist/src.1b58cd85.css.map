@@ -1,1 +1,0 @@
-{"version":3,"sources":["styles.css"],"names":[],"mappings":"AAAA,KACE,sBAAuB,CACvB,QACF,CAEA,KACE,iBAGF,CAEA,YAJE,UAAW,CACX,WAMF","file":"src.1b58cd85.css","sourceRoot":"..","sourcesContent":["body {\n  font-family: sans-serif;\n  margin: 0px;\n}\n\n.app {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n}\n\ncanvas {\n  width: 100%;\n  height: 100%;\n}\n"]}

@@ -4,13 +4,14 @@ import pyTigerGraph as tg
 from fastapi.middleware.cors import CORSMiddleware
 
 # conn = tg.TigerGraphConnection(host="https://wikigraph.i.tgcloud.io/", graphname="WikiGraph")
-conn = tg.TigerGraphConnection(host="https://bleve.i.tgcloud.io/", graphname="NotMyGraph")
+conn = tg.TigerGraphConnection(host="https://cosmo-covid19.i.tgcloud.io/", graphname="MyGraph")
 conn.apiToken = conn.getToken(conn.createSecret())
 
 app = FastAPI()   
 
 origins = [
     "http://localhost:1234/",
+    "http://localhost:8001/",
     "*"
 ]
 
@@ -26,16 +27,24 @@ app.add_middleware(
 def read_root():
      return {"Hello": "World"}   
 
-@app.get("/vertices")
+@app.get("/edges/EdgeTypes")
+def get_edge_types():
+     return {"edge_types": conn.getEdgeTypes()}
+
+@app.get("/vertices/Country")
 def get_vertices():
-     return {"vertices": conn.getVertices("Doc")}
+     return {"vertices": conn.getVertices("Country")}
 
-@app.get("/edges")
+@app.get("/edges/BIRTH_STAMP")
 def get_edges():
-     return {"vertices": conn.getVertices("Doc"), "edges": conn.getEdgesByType("LINKS_TO")}
-     # return {"vertices": conn.getVertices("Doc"), "edges": conn.getEdgesByType("LINKS_TO"), "entities": conn.getVertices("Entity"), "entity_links": conn.getEdgesByType("DOC_ENTITY")}
+     return {"years": conn.getVertices("Year_"), "edges": conn.getEdgesByType("BIRTH_STAMP")}
+
+@app.get("/edges/INFECTED_BY")
+def get_edges():
+     return {"patients": conn.getVertices("Patient"), "edges": conn.getEdgesByType("INFECTED_BY")}
+
+@app.get("/edges/PATIENT_TRAVELED")
+def get_edges():
+     return {"patients": conn.getVertices("Patient"), "travel_events": conn.getVertices("TravelEvent"), "edges": conn.getEdgesByType("PATIENT_TRAVELED")}
 
 
-@app.get("/items/{item_id}") 
-def read_item(item_id: int, q: Optional[str] = None):
-     return {"item_id": item_id, "q": q}
